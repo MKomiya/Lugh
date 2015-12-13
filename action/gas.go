@@ -17,7 +17,7 @@ func newClient() *http.Client {
 	return &http.Client{Transport: tr}
 }
 
-func DoAction() error {
+func RequestPostCurrentDate() error {
 	gasURL := os.Getenv("LUGH_GAS_URL")
 
 	client := newClient()
