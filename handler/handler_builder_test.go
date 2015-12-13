@@ -1,7 +1,6 @@
-package main
+package handler
 
 import (
-	"./handler"
 	"testing"
 )
 
@@ -16,14 +15,14 @@ func (*testhandler) Call() error {
 	return nil
 }
 
-func NewTestHandler() handler.Handler {
+func NewTestHandler() Handler {
 	return new(testhandler)
 }
 
 func TestListenCall(t *testing.T) {
-	handlers := []handler.Handler{NewTestHandler()}
+	handlers := []Handler{NewTestHandler()}
 
-	err := listenCall(handlers)
+	err := ListenCall(handlers)
 	if err != nil {
 		t.Error("Failed")
 	}
