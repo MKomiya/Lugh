@@ -75,7 +75,7 @@ func main() {
 		}
 		prev = illuminate.value
 
-		time.Sleep(1)
+		time.Sleep(500 * time.Millisecond)
 	}
 	device.Close()
 }
