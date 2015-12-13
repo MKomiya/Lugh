@@ -17,6 +17,7 @@ func newClient() *http.Client {
 	return &http.Client{Transport: tr}
 }
 
+// RequestPostCurrentDate is sending request for posting Google SpreadSheet
 func RequestPostCurrentDate() error {
 	gasURL := os.Getenv("LUGH_GAS_URL")
 
