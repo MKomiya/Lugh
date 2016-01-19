@@ -3,6 +3,7 @@ package main
 import (
 	"./handler"
 	"github.com/luismesas/goPi/spi"
+	"log"
 	"time"
 )
 
@@ -17,6 +18,7 @@ func main() {
 	for {
 		err := handler.ListenCall(handlers)
 		if err != nil {
+			log.Fatalf("Sensors event handler received error: %s", err)
 			break
 		}
 		time.Sleep(500 * time.Millisecond)
